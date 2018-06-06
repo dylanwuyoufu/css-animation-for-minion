@@ -1,0 +1,914 @@
+/*
+Arthur: Dylan Wu
+Date: 6/6/2018
+*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:after, :before {
+  content: '';
+  position: absolute;
+}
+
+.minion {
+  position: relative;
+  margin: 20px auto;
+  width: 140px;
+  height: 250px;
+  -webkit-perspective: 1500px;
+  -moz-perspective: 1500px;
+  perspective: 1500px;
+}
+
+.minion * {
+  position: absolute;
+}
+
+.minion .minion-body {
+  position: relative;
+  width: 140px;
+  height: 250px;
+  background: #FFCB4F;
+  -webkit-border-radius: 80px 80px 50px 50px;
+  -moz-border-radius: 80px 80px 50px 50px;
+  -ms-border-radius: 80px 80px 50px 50px;
+  border-radius: 80px 80px 50px 50px;
+  overflow: hidden;
+}
+
+.minion .minion-body .minion-braces-bottom {
+  bottom: 0px;
+  width: 140px;
+  height: 40px;
+  background-color: #6D9CC6;
+  background-image: linear-gradient(#6D9CC6 45%, #4B6587 100%);
+  border-top: 1px solid #4883b8;
+}
+
+.minion .minion-body .minion-braces-center {
+  bottom: 0;
+  width: 140px;
+  height: 90px;
+  border-top: 1px solid #4883b8;
+  overflow: hidden;
+}
+
+.minion .minion-body .minion-braces-center:before, .minion .minion-body .minion-braces-center:after {
+  top: 0;
+  width: 56px;
+  height: 75px;
+  border: 1px solid #4883b8;
+  z-index: 2;
+}
+
+.minion .minion-body .minion-braces-center:before {
+  left: -30px;
+  -webkit-border-radius: 0 0 35% 0;
+  -moz-border-radius: 0 0 35% 0;
+  -ms-border-radius: 0 0 35% 0;
+  border-radius: 0 0 35% 0;
+  -webkit-box-shadow: 40px -40px 30px 40px #6D9CC6;
+  -moz-box-shadow: 40px -40px 30px 40px #6D9CC6;
+  -ms-box-shadow: 40px -40px 30px 40px #6D9CC6;
+  box-shadow: 40px -40px 30px 40px #6D9CC6;
+}
+
+.minion .minion-body .minion-braces-center:after {
+  right: -30px;
+  -webkit-border-radius: 0 0 0 35%;
+  -moz-border-radius: 0 0 0 35%;
+  -ms-border-radius: 0 0 0 35%;
+  border-radius: 0 0 0 35%;
+  -webkit-box-shadow: -40px -40px 30px 40px #6D9CC6;
+  -moz-box-shadow: -40px -40px 30px 40px #6D9CC6;
+  -ms-box-shadow: -40px -40px 30px 40px #6D9CC6;
+  box-shadow: -40px -40px 30px 40px #6D9CC6;
+}
+
+.minion .minion-body .minion-braces-pocket {
+  bottom: 35px;
+  left: 50%;
+  transform: translateX(-17.5px);
+  height: 35px;
+  width: 35px;
+  -webkit-border-radius: 0 0 15px 15px;
+  -moz-border-radius: 0 0 15px 15px;
+  -ms-border-radius: 0 0 15px 15px;
+  border-radius: 0 0 15px 15px;
+  border: 1px solid #4883b8;
+  border-top: 0;
+  z-index: 3;
+}
+
+.minion .minion-body .minion-braces-pocket:before {
+  top: 0;
+  width: 35px;
+  height: 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: transparent transparent #4883b8 transparent;
+  -webkit-border-radius: 0 0 10px 10px;
+  -moz-border-radius: 0 0 10px 10px;
+  -ms-border-radius: 0 0 10px 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+.minion .minion-body .minion-braces-pocket .logo {
+  left: 50%;
+  top: 50%;
+  margin-top: -10px;
+  margin-left: -12.5px;
+  width: 25px;
+  height: 25px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  background: #333333;
+}
+
+.minion .minion-body .minion-braces-pocket .logo:before, .minion .minion-body .minion-braces-pocket .logo:after {
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+
+.minion .minion-body .minion-braces-pocket .logo:before {
+  width: 15px;
+  height: 15px;
+  background: #6D9CC6;
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.minion .minion-body .minion-braces-pocket .logo:after {
+  width: 7px;
+  height: 7px;
+  background: #333333;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+
+.minion .minion-body .minion-braces-pocket:after {
+  top: 17.5px;
+  right: 5px;
+  width: 12.5px;
+  height: 3px;
+  border-bottom: 1px solid #6D9CC6;
+  background: #333333;
+}
+
+.minion .minion-body .minion-braces-top {
+	top: 127px;
+	width: 12px;
+	height: 60px;
+	background: #5582ab;
+	border: 1px solid #4883b8;
+	z-index: 3;
+}
+
+.minion .minion-body .minion-braces-top.left {
+	left: 5px;
+	-webkit-transform: rotate(-65deg);
+	-moz-transform: rotate(-65deg);
+	-ms-transform: rotate(-65deg);
+	transform: rotate(-65deg);
+	border-radius: 0px 2px 2px 5px;
+	box-shadow: 1px -1px 2px #3d3d3d;
+}
+
+.minion .minion-body .minion-braces-top.left:after {
+	right: 2px;
+}
+
+.minion .minion-body .minion-braces-top.right {
+	right: 5px;
+	-webkit-transform: rotate(65deg);
+	-moz-transform: rotate(65deg);
+	-ms-transform: rotate(65deg);
+	transform: rotate(65deg);
+	border-radius: 2px 0px 5px 2px;
+	box-shadow: -2px -1px 2px #3d3d3d;
+}
+
+.minion .minion-body .minion-braces-top.right:after {
+  left: 2px;
+}
+
+.minion .minion-body .minion-braces-top:after {
+  bottom: 0;
+  width: 8px;
+  height: 8px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+  background: #333333;
+}
+
+.minion .minion-body:after {
+  width: 80%;
+  height: 250px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  border-radius: 20px;
+  background-image: -webkit-radial-gradient(40% 30%, rgba(250, 250, 250, 0.6) 0%, rgba(250, 250, 250, 0) 60%);
+}
+
+.minion .minion-hair {
+  top: -15px;
+  list-style-type: none;
+}
+
+.minion .minion-hair li {
+  width: 10px;
+  height: 30px;
+  float: left;
+}
+
+.minion .minion-hair li:nth-child(1) {
+  left: 8px;
+}
+.minion .minion-hair li:nth-child(2) {
+  left: 18px;
+}
+.minion .minion-hair li:nth-child(3) {
+  left: 30px;
+}
+.minion .minion-hair li:nth-child(4) {
+  left: 45px;
+}
+.minion .minion-hair li:nth-child(5) {
+  left: 60px;
+}
+.minion .minion-hair li:nth-child(6) {
+  left: 76px;
+}
+.minion .minion-hair li:nth-child(7) {
+  left: 93px;
+}
+.minion .minion-hair li:nth-child(8) {
+  left: 107px;
+}
+.minion .minion-hair li:nth-child(9) {
+  left: 119px;
+}
+.minion .minion-hair li:nth-of-type(n+6) {
+  border-left: 1px solid #333333;
+  -webkit-border-radius: 80% 0 0 0;
+  -moz-border-radius: 80% 0 0 0;
+  -ms-border-radius: 80% 0 0 0;
+  border-radius: 80% 0 0 0;
+}
+.minion .minion-hair li:nth-of-type(-n+4) {
+  border-right: 1px solid #333333;
+  -webkit-border-radius: 0 80% 0 0;
+  -moz-border-radius: 0 80% 0 0;
+  -ms-border-radius: 0 80% 0 0;
+  border-radius: 0 80% 0 0;
+}
+.minion .minion-hair.back {
+  z-index: -1;
+}
+.minion .minion-hair.back li:nth-child(1) {
+  margin-top: 36px;
+  -webkit-transform: rotate(-70deg);
+  -moz-transform: rotate(-70deg);
+  -ms-transform: rotate(-70deg);
+  transform: rotate(-70deg);
+}
+.minion .minion-hair.back li:nth-child(2) {
+  margin-top: 19px;
+  -webkit-transform: rotate(-50deg);
+  -moz-transform: rotate(-50deg);
+  -ms-transform: rotate(-50deg);
+  transform: rotate(-50deg);
+}
+.minion .minion-hair.back li:nth-child(3) {
+  margin-top: 12px;
+  -webkit-transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+.minion .minion-hair.back li:nth-child(4) {
+  margin-top: 3px;
+  -webkit-transform: rotate(-10deg);
+  -moz-transform: rotate(-10deg);
+  -ms-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+}
+.minion .minion-hair.back li:nth-child(5) {
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  transform: rotate(2deg);
+  border-left: 1px solid #333333;
+  -webkit-border-radius: 80% 0 0 0;
+  -moz-border-radius: 80% 0 0 0;
+  -ms-border-radius: 80% 0 0 0;
+  border-radius: 80% 0 0 0;
+}
+.minion .minion-hair.back li:nth-child(6) {
+  margin-top: 3px;
+  -webkit-transform: rotate(10deg);
+  -moz-transform: rotate(10deg);
+  -ms-transform: rotate(10deg);
+  transform: rotate(10deg);
+}
+.minion .minion-hair.back li:nth-child(7) {
+  margin-top: 12px;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+.minion .minion-hair.back li:nth-child(8) {
+  margin-top: 19px;
+  -webkit-transform: rotate(50deg);
+  -moz-transform: rotate(50deg);
+  -ms-transform: rotate(50deg);
+  transform: rotate(50deg);
+}
+.minion .minion-hair.back li:nth-child(9) {
+  margin-top: 36px;
+  -webkit-transform: rotate(70deg);
+  -moz-transform: rotate(70deg);
+  -ms-transform: rotate(70deg);
+  transform: rotate(70deg);
+}
+.minion .minion-hair.front {
+  margin-top: 3px;
+}
+.minion .minion-hair.front li:nth-of-type(1) {
+  -webkit-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -ms-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+  margin-top: 21px;
+}
+.minion .minion-hair.front li:nth-of-type(2) {
+  -webkit-transform: rotate(-46deg);
+  -moz-transform: rotate(-46deg);
+  -ms-transform: rotate(-46deg);
+  transform: rotate(-46deg);
+  margin-top: 12px;
+}
+.minion .minion-hair.front li:nth-of-type(3) {
+  -webkit-transform: rotate(-28deg);
+  -moz-transform: rotate(-28deg);
+  -ms-transform: rotate(-28deg);
+  transform: rotate(-28deg);
+  margin-top: 7px;
+}
+.minion .minion-hair.front li:nth-of-type(4) {
+  -webkit-transform: rotate(-12deg);
+  -moz-transform: rotate(-12deg);
+  -ms-transform: rotate(-12deg);
+  transform: rotate(-12deg);
+  margin-top: 5px;
+}
+.minion .minion-hair.front li:nth-of-type(5) {
+  -webkit-transform: rotate(-2deg);
+  -moz-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  transform: rotate(-2deg);
+  margin-top: 3px;
+  border-right: 1px solid #333333;
+  -webkit-border-radius: 0 80% 0 0;
+  -moz-border-radius: 0 80% 0 0;
+  -ms-border-radius: 0 80% 0 0;
+  border-radius: 0 80% 0 0;
+}
+.minion .minion-hair.front li:nth-of-type(6) {
+  -webkit-transform: rotate(12deg);
+  -moz-transform: rotate(12deg);
+  -ms-transform: rotate(12deg);
+  transform: rotate(12deg);
+  margin-top: 6px;
+}
+.minion .minion-hair.front li:nth-of-type(7) {
+  -webkit-transform: rotate(28deg);
+  -moz-transform: rotate(28deg);
+  -ms-transform: rotate(28deg);
+  transform: rotate(28deg);
+  margin-top: 7px;
+}
+.minion .minion-hair.front li:nth-of-type(8) {
+  -webkit-transform: rotate(46deg);
+  -moz-transform: rotate(46deg);
+  -ms-transform: rotate(46deg);
+  transform: rotate(46deg);
+  margin-top: 12px;
+}
+.minion .minion-hair.front li:nth-of-type(9) {
+	-webkit-transform: rotate(60deg);
+	-moz-transform: rotate(60deg);
+	-ms-transform: rotate(60deg);
+	transform: rotate(60deg);
+	margin-top: 21px;
+}
+.minion .minion-mouth {
+	top: 110px;
+	left: 30%;
+	transform: rotate(5deg) scale(1.1, 1.1) translate(-50%, 0px);
+	width: 60px;
+	height: 22px;
+	border-bottom: 2px solid #fdf3e5;
+	-webkit-border-radius: 90%;
+	-moz-border-radius: 90%;
+	-ms-border-radius: 90%;
+	border-radius: 90%;
+	-webkit-box-shadow: inset -1px 2px -1px rgba(0, 0, 0, 0.3);
+	-moz-box-shadow: inset -1px 2px -1px rgba(0, 0, 0, 0.3);
+	-ms-box-shadow: inset -1px 2px -1px rgba(0, 0, 0, 0.3);
+	box-shadow: inset -1px 2px -1px rgba(0, 0, 0, 0.3);
+}
+.minion .arm-shadow {
+  top: 180px;
+  width: 5px;
+  height: 30px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  border-radius: 50%;
+}
+.minion .arm-shadow.shadowleft {
+  left: 0;
+  -webkit-box-shadow: inset 2px 0 3px -1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 2px 0 3px -1px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: inset 2px 0 3px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 2px 0 3px -1px rgba(0, 0, 0, 0.3);
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
+}
+.minion .arm-shadow.shadowright {
+  right: 0;
+  -webkit-box-shadow: inset -2px 0 3px -1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset -2px 0 3px -1px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: inset -2px 0 3px -1px rgba(0, 0, 0, 0.3);
+  box-shadow: inset -2px 0 3px -1px rgba(0, 0, 0, 0.3);
+  -webkit-transform: rotate(-5deg);
+  -moz-transform: rotate(-5deg);
+  -ms-transform: rotate(-5deg);
+  transform: rotate(-5deg);
+}
+.minion .minion-arm {
+  top: 160px;
+  width: 12px;
+  height: 80px;
+  background: #FFCB4F;
+}
+.minion .minion-arm.armleft {
+  left: -12px;
+  -webkit-border-radius: 20px 0 0 0px/80px 0 0 0px;
+  -moz-border-radius: 20px 0 0 0px/80px 0 0 0px;
+  -ms-border-radius: 20px 0 0 0px/80px 0 0 0px;
+  border-radius: 20px 0 0 0px/80px 0 0 0px;
+}
+.minion .minion-arm.armright {
+  right: -12px;
+  -webkit-border-radius: 0 20px 0px 0/0 80px 0px 0;
+  -moz-border-radius: 0 20px 0px 0/0 80px 0px 0;
+  -ms-border-radius: 0 20px 0px 0/0 80px 0px 0;
+  border-radius: 0 20px 0px 0/0 80px 0px 0;
+}
+.minion .minion-hand {
+  bottom: 0;
+  width: 17px;
+  height: 18px;
+  background: #333333;
+}
+.minion .minion-hand.handleft {
+  left: -14px;
+}
+.minion .minion-hand.handleft:before {
+  bottom: -3px;
+  left: -3px;
+  -webkit-transform: rotate(20deg);
+  -moz-transform: rotate(20deg);
+  -ms-transform: rotate(20deg);
+  transform: rotate(20deg);
+}
+.minion .minion-hand.handleft:after {
+  bottom: -4px;
+  left: 13px;
+  -webkit-transform: rotate(-30deg);
+  -moz-transform: rotate(-30deg);
+  -ms-transform: rotate(-30deg);
+  transform: rotate(-30deg);
+}
+.minion .minion-hand.handleft .finger {
+  bottom: -6px;
+  left: 5px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.minion .minion-hand.handright {
+  right: -14px;
+}
+.minion .minion-hand.handright:before {
+  bottom: -3px;
+  right: -3px;
+  -webkit-transform: rotate(-20deg);
+  -moz-transform: rotate(-20deg);
+  -ms-transform: rotate(-20deg);
+  transform: rotate(-20deg);
+}
+.minion .minion-hand.handright:after {
+  bottom: -4px;
+  right: 13px;
+  -webkit-transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+  -ms-transform: rotate(30deg);
+  transform: rotate(30deg);
+}
+.minion .minion-hand.handright .finger {
+  bottom: -6px;
+  right: 5px;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+.minion .minion-hand:before, .minion .minion-hand:after, .minion .minion-hand .finger {
+  width: 10px;
+  height: 20px;
+  background: #333333;
+  -webkit-border-radius: 0 0 20px 20px;
+  -moz-border-radius: 0 0 20px 20px;
+  -ms-border-radius: 0 0 20px 20px;
+  border-radius: 0 0 20px 20px;
+}
+.minion .minion-hand .wrist {
+  width: 17px;
+  height: 3px;
+  background: #333333;
+  -webkit-border-radius: 40%;
+  -moz-border-radius: 40%;
+  -ms-border-radius: 40%;
+  border-radius: 40%;
+  top: -3px;
+}
+.minion .minion-leg {
+  bottom: -15px;
+  width: 25px;
+  height: 15px;
+  background: #4B6587;
+  z-index: -1;
+}
+.minion .minion-leg:after {
+  top: -10px;
+  height: 10px;
+  width: 20px;
+  background: #4B6587;
+}
+.minion .minion-leg.legleft {
+  left: 40px;
+  -webkit-border-radius: 0 0 10% 20%/0 0 80% 80%;
+  -moz-border-radius: 0 0 10% 20%/0 0 80% 80%;
+  -ms-border-radius: 0 0 10% 20%/0 0 80% 80%;
+  border-radius: 0 0 10% 20%/0 0 80% 80%;
+}
+.minion .minion-leg.legleft:after {
+  left: -12px;
+  -webkit-transform: rotate(55deg);
+  -moz-transform: rotate(55deg);
+  -ms-transform: rotate(55deg);
+  transform: rotate(55deg);
+}
+.minion .minion-leg.legright {
+  right: 40px;
+  -webkit-border-radius: 0 0 20% 10%/0 0 80% 80%;
+  -moz-border-radius: 0 0 20% 10%/0 0 80% 80%;
+  -ms-border-radius: 0 0 20% 10%/0 0 80% 80%;
+  border-radius: 0 0 20% 10%/0 0 80% 80%;
+}
+.minion .minion-leg.legright:after {
+	right: -12px;
+	-webkit-transform: rotate(-55deg);
+	-moz-transform: rotate(-55deg);
+	-ms-transform: rotate(-55deg);
+	transform: rotate(-55deg);
+}
+.minion .minion-shoe {
+	bottom: -26px;
+	width: 30px;
+	height: 10px;
+	z-index: -2;
+	background: #333333;
+}
+.minion .minion-shoe.shoeleft {
+	right: 75px;
+	-webkit-border-radius: 50px 20px 15px 10px;
+	-moz-border-radius: 50px 20px 15px 10px;
+	-ms-border-radius: 50px 20px 15px 10px;
+	border-radius: 50px 20px 15px 10px;
+	-webkit-transform: rotate(-3deg);
+	-moz-transform: rotate(-3deg);
+	-ms-transform: rotate(-3deg);
+	transform: rotate(-3deg);
+}
+.minion .minion-shoe.shoeleft:before, .minion .minion-shoe.shoeleft:after {
+	right: 0;
+}
+.minion .minion-shoe.shoeleft:after {
+	-webkit-border-radius: 10px 0 0 10px;
+	-moz-border-radius: 10px 0 0 10px;
+	-ms-border-radius: 10px 0 0 10px;
+	border-radius: 10px 0 0 10px;
+}
+.minion .minion-shoe.shoeright {
+	left: 75px;
+	-webkit-border-radius: 20px 50px 10px 15px;
+	-moz-border-radius: 20px 50px 10px 15px;
+	-ms-border-radius: 20px 50px 10px 15px;
+	border-radius: 20px 50px 10px 15px;
+	-webkit-transform: rotate(3deg);
+	-moz-transform: rotate(3deg);
+	-ms-transform: rotate(3deg);
+	transform: rotate(3deg);
+}
+.minion .minion-shoe.shoeright:before, .minion .minion-shoe.shoeright:after {
+	left: 0;
+}
+.minion .minion-shoe.shoeright:after {
+	-webkit-border-radius: 0 10px 10px 0px;
+	-moz-border-radius: 0 10px 10px 0px;
+	-ms-border-radius: 0 10px 10px 0px;
+	border-radius: 0 10px 10px 0px;
+}
+.minion .minion-shoe:before {
+	top: -10px;
+	height: 15px;
+	width: 22px;
+	background: #333333;
+}
+.minion .minion-shoe:after {
+	bottom: -3px;
+	width: 30px;
+	height: 3px;
+	background-image: -webkit-linear-gradient(#666666 0%, #333333 58%);
+	background-image: -moz-linear-gradient(#666666 0%, #333333 58%);
+	background-image: -o-linear-gradient(#666666 0%, #333333 58%);
+	background-image: linear-gradient(#666666 0%, #333333 58%);
+}
+.minion .minion-glasses {
+	top: 40px;
+	left: 0;
+	width: 140px;
+	height: 60px;
+}
+.minion .minion-glasses .glasses {
+	width: 50px;
+	height: 50px;
+	border: 5px solid #CCCCCC;
+	box-shadow: 6px 5px 8px rgba(0, 0, 0, 0.1);
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	z-index: 9;
+	overflow: hidden;
+}
+.minion .minion-glasses .glasses .eye {
+	width: 50px;
+	height: 50px;
+	border: 3px solid #666666;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+}
+.minion .minion-glasses .glasses .eye.eyeleft {
+	left: -3px;
+}
+.minion .minion-glasses .glasses .eye.eyeright {
+	right: -3px;
+}
+.minion .minion-glasses .glasses .eye .eyeball {
+	margin-top: 1px;
+	height: 46px;
+	width: 50px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	background: whitesmoke;
+	box-shadow: inset 0px 2px 10px 0px rgba(51, 51, 51, 0.5), inset 0px -1px 5px 0px rgba(51, 51, 51, 0.3);
+}
+.minion .minion-glasses .glasses .eye .eyeball:after {
+	top: 30%;
+	width: 15px;
+	height: 15px;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	-ms-border-radius: 50%;
+	border-radius: 50%;
+	background-image: -webkit-radial-gradient(circle, #000000 0%, #efbc7f 25%, #79665f 50%, #020202 100%);
+}
+.minion .minion-glasses .glasses .eye .eyeball.ballleft:after {
+  right: 15px;
+}
+.minion .minion-glasses .glasses .eye .eyeball.ballright:after {
+  left: 15px;
+}
+.minion .minion-glasses:hover > .glasses .eye .eyeball.ballleft:after{
+	top:10px;
+	right: 10px;
+}
+.minion .minion-glasses:hover > .glasses .eye .eyeball.ballright:after{
+	bottom:10px;
+	left:10px;
+}
+.minion .minion-glasses .glassesleft {
+	left: 12px;
+}
+.minion .minion-glasses .glassesright {
+	right: 12px;
+}
+.minion .minion-glasses .nail {
+	top: 50%;
+	margin-top: -12.5px;
+	width: 9px;
+	height: 25px;
+	background: #999999;
+}
+.minion .minion-glasses .nail.leftnail {
+	left: 8px;
+}
+.minion .minion-glasses .nail.leftnail.up {
+	position: absolute;
+    background-color: #a8aa95;
+    height: 12.5px;
+    border-top-left-radius: 3px;
+    box-shadow: 2px 0px 3px #ffffff inset, 0px 0px 4px #000000;
+	z-index: 8;
+}
+.minion .minion-glasses .nail.leftnail.down {
+	position: absolute;
+    background-color: #a8aa95;
+    height: 12.5px;
+    border-bottom-left-radius: 3px;
+    box-shadow: 2px 0px 3px #ffffff inset, 0px 0px 4px #000000;
+	margin-top: 0px;
+	z-index: 8;
+}
+.minion .minion-glasses .nail.rightnail {
+  right: 8px;
+}
+.minion .minion-glasses .nail.rightnail.up {
+	position: absolute;
+    background-color: #a8aa95;
+    height: 12.5px;
+    border-top-right-radius: 3px;
+    box-shadow: 2px 0px 3px #ffffff inset, 0px 0px 4px #000000;
+	z-index: 8;
+}
+.minion .minion-glasses .nail.rightnail.down {
+	position: absolute;
+    background-color: #a8aa95;
+    height: 12.5px;
+    border-bottom-right-radius: 3px;
+    box-shadow: 2px 0px 3px #ffffff inset, 0px 0px 4px #000000;
+	margin-top: 0px;
+	z-index: 8;
+}
+.minion .minion-glasses .frame {
+	border-radius: 4px;
+	top: 50%;
+	margin-top: -8px;
+	width: 3px;
+	height: 12px;
+	z-index: 6;
+}
+.minion .minion-glasses .frame.leftframe.up {
+	left: -5px;
+	background-color: #323335;
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+    box-shadow: 0px 2px 5px #000000 inset, 0px -2px 5px #000000 inset, 1px 2px 2px #000000;
+	border-radius: 4px;
+}
+.minion .minion-glasses .frame.leftframe.down {
+	margin-top: 0px;
+	left: -5px;
+	background-color: #323335;
+    width: 15px;
+    height: 8px;
+    display: inline-block;
+    box-shadow: 0px 2px 5px #000000 inset, 0px -2px 5px #000000 inset, 1px 2px 2px #000000;
+	border-radius: 4px;
+}
+.minion .minion-glasses .frame.rightframe.up {
+	right: -5px;
+	background-color: #323335;
+    width: 15px;
+    height: 10px;
+    display: inline-block;
+    box-shadow: 0px 2px 5px #000000 inset, 0px -2px 5px #000000 inset, 1px 2px 2px #000000;
+	border-radius: 4px;
+}
+.minion .minion-glasses .frame.rightframe.down {
+	right: -5px;
+	margin-top: 0px;
+	background-color: #323335;
+    width: 15px;
+    height: 8px;
+    display: inline-block;
+    box-shadow: 0px 2px 5px #000000 inset, 0px -2px 5px #000000 inset, 1px 2px 2px #000000;
+	border-radius: 4px;
+}
+.minion .shadow {
+	bottom: -24px;
+	left: 5px;
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+	-webkit-transform: rotateX(90deg) translateZ(-125px);
+	-moz-transform: rotateX(90deg) translateZ(-125px);
+	-ms-transform: rotateX(90deg) translateZ(-125px);
+	-o-transform: rotateX(90deg) translateZ(-125px);
+	transform: rotateX(90deg) translateZ(-125px);
+}
+/*Anamition*/
+.minion-hair.back{
+    -webkit-animation: hairback 2s ease-in-out infinite;
+}
+@-webkit-keyframes hairback{
+    0%,25%,31%,80%{
+    }
+    30%{
+        -webkit-transform: rotate(1deg) translate3d(-1px,-1px,0);
+    }
+	100%{
+		-webkit-transform: rotate(1deg) translate3d(1px,1px,0);
+	}
+}
+
+.minion-mouth{
+    -webkit-animation: mouth 2s ease-in-out infinite;
+}
+@-webkit-keyframes mouth{
+	0%,50%, 100%{
+		-webkit-transform: rotate(0deg);
+    }
+    80%{
+        -webkit-transform: rotate(20deg);
+    }
+}
+
+.shoeright{
+    -webkit-animation: rightshoe .8s ease-in-out infinite;
+}
+@-webkit-keyframes rightshoe{
+    0%,50%,100%{
+        -webkit-transform: rotate(0deg);
+    }
+
+    80%{
+        -webkit-transform: rotate(-10deg);
+    }
+}
+.shoeleft {
+    -webkit-animation: leftshoe .8s ease-in-out infinite;
+}
+@-webkit-keyframes leftshoe{
+    0%,50%,100%{
+        -webkit-transform: rotate(0deg);
+    }
+
+    30%{
+        -webkit-transform: rotate(10deg);
+    }
+}
+
+.eye.eyeleft .ballleft:after,
+.eye.eyeright .ballright:after {
+    -webkit-animation: eyeball 5s ease-in-out infinite;
+}
+@-webkit-keyframes eyeball {
+    0%,20%,50%,70%,100%{
+        -webkit-transform: translateX(0px);
+    }
+    30%,40%{
+        -webkit-transform: translate3d(3px,4px,0);
+    }
+    80%,90%{
+        -webkit-transform: translate3d(-5px,4px,0);
+    }
+}
